@@ -25,7 +25,7 @@ const MicroCLICmdEntry_t cmdTable[] = {
 };
 
 const MicroCLICfg_t dbgCfg = {
-    .bannerText = "\r\n\n\n\nKinetis MCU Demo\r\n\n",
+    .bannerText = "\r\n\n\n\nLCD Demo\r\n\n",
     .promptText = "> ",
     .cmdTable = cmdTable,
     .cmdCount = sizeof(cmdTable)/sizeof(cmdTable[0]),
