@@ -1,5 +1,5 @@
-# mk8x-template-project
-This project is intended to serve as a template firmware project for the Kinetis MK8x family of microcontrollers.
+# LCD Demo
+A demo LCD project using the Kinetis MK82 microcontroller.
 
 ## Dependencies
 1) GNU ARM GCC toolchain ([download](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm))
@@ -10,7 +10,7 @@ This project is intended to serve as a template firmware project for the Kinetis
 
 ## Build
 1) Update all submodules
-    * `git submodule update --init && git submodule sync`
+    * `git submodule update --init`
 1) Make sure `ARMGCC_DIR` environment variable is set to the location you installed the ARM gcc toolchain.
 1) Make sure build scripts are executable
     * `chmod +x *.sh`
