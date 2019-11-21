@@ -1,0 +1,122 @@
+# Project data
+project(KinetisFirmware)
+SET(PROJECT_NAME kinetis_firmware)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.12)
+
+# Cross compile settings
+SET(CMAKE_SYSTEM_NAME Generic)
+
+# Enable ASM
+ENABLE_LANGUAGE(ASM)
+
+SET(CMAKE_STATIC_LIBRARY_PREFIX)
+SET(CMAKE_STATIC_LIBRARY_SUFFIX)
+
+SET(CMAKE_EXECUTABLE_LIBRARY_PREFIX)
+SET(CMAKE_EXECUTABLE_LIBRARY_SUFFIX)
+
+# Current directory
+SET(ProjDirPath ${CMAKE_CURRENT_SOURCE_DIR})
+
+# Add compile options for all build targets
+add_compile_options(
+  "-Wall" "-fno-common" "-ffunction-sections" "-fdata-sections" "-ffreestanding" 
+  "-fno-builtin" "-mthumb" "-mapcs" "-mcpu=cortex-m4" "-mfloat-abi=hard" 
+  "-mfpu=fpv4-sp-d16" "-MMD" "-MP"
+  "$<$<CONFIG:DEBUG>:-O0;-g;-ggdb>"
+  "$<$<CONFIG:RELEASE>:-Os>"
+  "$<$<COMPILE_LANGUAGE:CXX>:-fno-rtii;-fno-exceptions>"
+  "$<$<COMPILE_LANGUAGE:C>:-std=gnu99>"
+  "$<$<COMPILE_LANGUAGE:ASM>:-std=gnu99>"
+)
+
+# Add compile -D defines
+add_compile_definitions(
+    "CPU_MK82FN256VDC15"
+    "$<$<COMPILE_LANGUAGE:C>:__USE_CMSIS>"
+    "$<$<COMPILE_LANGUAGE:ASM>:__STARTUP_CLEAR_BSS;__STARTUP_INITIALIZE_NONCACHEDATA>"
+)
+
+# Linker flags
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -g")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} --specs=nano.specs")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} --specs=nosys.specs")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -Wall")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -fno-common")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -ffunction-sections")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -fdata-sections")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -ffreestanding")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -fno-builtin")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -mthumb")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -mapcs")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -Xlinker")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} --gc-sections")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -Xlinker")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -static")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -Xlinker")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -z")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -Xlinker")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} muldefs")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -mcpu=cortex-m4")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -mfloat-abi=hard")
+SET(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -mfpu=fpv4-sp-d16")
+
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} --specs=nano.specs")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} --specs=nosys.specs")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -Wall")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -fno-common")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -ffunction-sections")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -fdata-sections")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -ffreestanding")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -fno-builtin")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -mthumb")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -mapcs")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -Xlinker")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} --gc-sections")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -Xlinker")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -static")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -Xlinker")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -z")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -Xlinker")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} muldefs")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -mcpu=cortex-m4")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -mfloat-abi=hard")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -mfpu=fpv4-sp-d16")
+
+# Toolchain include paths
+list(INSERT toolchain_INCLUDES 0
+"${ARMGCC_DIR}/arm-none-eabi/include"
+"${ARMGCC_DIR}/arm-none-eabi/include/machine"
+"${ARMGCC_DIR}/lib/gcc/arm-none-eabi/7.3.1/include"
+"${ARMGCC_DIR}/lib/gcc/arm-none-eabi/7.3.1/plugin/include"
+)
+include_directories("${toolchain_INCLUDES}")
+
+# Include subdirectory makefiles
+include("${ProjDirPath}/src/CMakeLists.txt")
+include("${ProjDirPath}/lib/CMakeLists.txt")
+
+# Build firmware target
+add_executable(${PROJECT_NAME}.elf ${kinets_firmware_SOURCES})
+
+# Add toolchain include directories
+list(INSERT kinets_firmware_INCLUDES 0
+"${toolchain_INCLUDES}"
+)
+
+# Add include directories to target
+target_include_directories(${PROJECT_NAME}.elf PUBLIC ${kinets_firmware_INCLUDES})
+
+set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -T${ProjDirPath}/MK82FN256xxx15_flash.ld -static")
+set(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS_RELEASE} -T${ProjDirPath}/MK82FN256xxx15_flash.ld -static")
+
+target_link_libraries(${PROJECT_NAME}.elf -Wl,--start-group)
+target_link_libraries(${PROJECT_NAME}.elf debug m)
+target_link_libraries(${PROJECT_NAME}.elf debug c)
+target_link_libraries(${PROJECT_NAME}.elf debug gcc)
+target_link_libraries(${PROJECT_NAME}.elf debug nosys)
+target_link_libraries(${PROJECT_NAME}.elf optimized m)
+target_link_libraries(${PROJECT_NAME}.elf optimized c)
+target_link_libraries(${PROJECT_NAME}.elf optimized gcc)
+target_link_libraries(${PROJECT_NAME}.elf optimized nosys)
+target_link_libraries(${PROJECT_NAME}.elf -Wl,--end-group)

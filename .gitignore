@@ -1,0 +1,7 @@
+.*
+!.git*
+build
+*.elf
+*.map
+*.bin
+*.obj

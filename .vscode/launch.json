@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Attach Debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "build/Debug/kinetis_firmware.elf",
+            "request": "attach",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "device": "MK82FN256XXX15",
+        },
+        {
+            "name": "Attach Release",
+            "cwd": "${workspaceRoot}",
+            "executable": "build/Release/kinetis_firmware.elf",
+            "request": "attach",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "device": "MK82FN256XXX15",
+        },
+        {
+            "name": "Launch Debug",
+            "cwd": "${workspaceRoot}",
+            "executable": "build/Debug/kinetis_firmware.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "device": "MK82FN256XXX15",
+        },
+        {
+            "name": "Launch Release",
+            "cwd": "${workspaceRoot}",
+            "executable": "build/Release/kinetis_firmware.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "device": "MK82FN256XXX15",
+        },
+    ]
+}

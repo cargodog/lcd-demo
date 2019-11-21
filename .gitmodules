@@ -1,0 +1,9 @@
+[submodule "lib/kinetis-sdk/kinetis-sdk-mk8x"]
+	path = lib/kinetis-sdk/kinetis-sdk-mk8x
+	url = git@github.com:cargodog/kinetis-sdk-mk8x.git
+[submodule "lib/printf/printf"]
+	path = lib/printf/printf
+	url = git@github.com:mpaland/printf.git
+[submodule "lib/microcli/microcli"]
+	path = lib/microcli/microcli
+	url = git@github.com:cargodog/microcli.git
