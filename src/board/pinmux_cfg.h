@@ -38,7 +38,7 @@ const PinConfig_t defaultPinCfgs[] = {
         }
     },
 
-    // QSPI Flash pins
+    // QSPI flash pins
     [PIN_QSPI_FLASH_A_CLK] = { 
         .port = PORTE,
         .pin = 1U,
@@ -85,6 +85,44 @@ const PinConfig_t defaultPinCfgs[] = {
         .cfg = {
             .driveStrength          = kPORT_HighDriveStrength,
             .mux                    = kPORT_MuxAlt5,
+        }
+    },
+
+    // Touch panel I2C
+    [PIN_CTP_INT] = { 
+        .port = PORTE,
+        .pin = 6U,
+        .cfg = {
+            .slewRate               = kPORT_SlowSlewRate,
+            .driveStrength          = kPORT_HighDriveStrength,
+            .mux                    = kPORT_MuxAsGpio,
+        }
+    },
+    [PIN_CTP_RESET] = { 
+        .port = PORTE,
+        .pin = 9U,
+        .cfg = {
+            .slewRate               = kPORT_SlowSlewRate,
+            .driveStrength          = kPORT_HighDriveStrength,
+            .mux                    = kPORT_MuxAsGpio,
+        }
+    },
+    [PIN_CTP_SDA] = { 
+        .port = PORTE,
+        .pin = 10U,
+        .cfg = {
+            .openDrainEnable        = kPORT_OpenDrainEnable,
+            .driveStrength          = kPORT_HighDriveStrength,
+            .mux                    = kPORT_MuxAlt2,
+        }
+    },
+    [PIN_CTP_SCL] = { 
+        .port = PORTE,
+        .pin = 11U,
+        .cfg = {
+            .openDrainEnable        = kPORT_OpenDrainEnable,
+            .driveStrength          = kPORT_HighDriveStrength,
+            .mux                    = kPORT_MuxAlt2,
         }
     },
 };

@@ -24,7 +24,6 @@ void initialize_pinmux(void)
 
 void pinmux_apply(const PinConfig_t * const pinmux, size_t count)
 {
-    enable_port_clocks();
     for(int i = 0; i < count; i++) {
         PORT_SetPinConfig(pinmux[i].port, pinmux[i].pin, &pinmux[i].cfg);
     }

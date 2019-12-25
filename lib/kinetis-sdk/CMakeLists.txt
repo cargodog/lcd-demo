@@ -4,6 +4,7 @@
 list(APPEND kinets_firmware_SOURCES
 "${CMAKE_CURRENT_LIST_DIR}/kinetis-sdk-mk8x/devices/MK82F25615/drivers/fsl_clock.c"
 "${CMAKE_CURRENT_LIST_DIR}/kinetis-sdk-mk8x/devices/MK82F25615/drivers/fsl_gpio.c"
+"${CMAKE_CURRENT_LIST_DIR}/kinetis-sdk-mk8x/devices/MK82F25615/drivers/fsl_i2c.c"
 "${CMAKE_CURRENT_LIST_DIR}/kinetis-sdk-mk8x/devices/MK82F25615/drivers/fsl_lpuart.c"
 "${CMAKE_CURRENT_LIST_DIR}/kinetis-sdk-mk8x/devices/MK82F25615/drivers/fsl_qspi.c"
 "${CMAKE_CURRENT_LIST_DIR}/kinetis-sdk-mk8x/devices/MK82F25615/system_MK82F25615.c"

@@ -1,4 +1,5 @@
 # Subdirectory make files
+include("${CMAKE_CURRENT_LIST_DIR}/ft6x36/CMakeLists.txt")
 include("${CMAKE_CURRENT_LIST_DIR}/kinetis-sdk/CMakeLists.txt")
 include("${CMAKE_CURRENT_LIST_DIR}/microcli/CMakeLists.txt")
 include("${CMAKE_CURRENT_LIST_DIR}/printf/CMakeLists.txt")

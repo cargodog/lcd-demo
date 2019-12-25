@@ -7,3 +7,6 @@
 [submodule "lib/microcli/microcli"]
 	path = lib/microcli/microcli
 	url = git@github.com:cargodog/microcli.git
+[submodule "lib/ft6x36/ft6x36"]
+	path = lib/ft6x36/ft6x36
+	url = git@github.com:cargodog/ft6x36.git

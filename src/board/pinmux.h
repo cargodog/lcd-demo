@@ -27,6 +27,12 @@ typedef enum {
     PIN_QSPI_FLASH_A_D1,
     PIN_QSPI_FLASH_A_D2,
     PIN_QSPI_FLASH_A_D3,
+
+    // Touch panel I2C
+    PIN_CTP_INT,
+    PIN_CTP_RESET,
+    PIN_CTP_SDA,
+    PIN_CTP_SCL,
     
     // NO MORE IDs BELOW HERE
     MAX_NUM_PINS
