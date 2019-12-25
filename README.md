@@ -7,6 +7,7 @@ A demo LCD project using the Kinetis MK82 microcontroller.
 1) Kinetis MK8x SDK (included as git submodule)
 1) [MicroCLI](https://github.com/cargodog/microcli) lib (included as git submodule)
 1) MPaland `printf` lib (included as git submodule)
+1) [ft6x36 touch panel driver](https://github.com/cargodog/ft6x36) lib (included as git submodule)
 
 ## Build
 1) Update all submodules
