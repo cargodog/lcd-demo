@@ -33,5 +33,9 @@ int board_dbg_uart_getchar(void);
 int board_dbg_uart_getchar_non_blocking(void);
 void board_dbg_uart_putchar(char character);
 
+// LCD pin control
+void board_set_lcd_pins_output(void);
+void board_set_lcd_pins_input(void);
+
 
 #endif /* _BOARD_H_ */

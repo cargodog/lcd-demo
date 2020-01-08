@@ -15,7 +15,7 @@
 
 #define INITIALIZE_GPIO_PIN(id, direction, polarity) \
 {\
-    assert((id) >= 0 && (id) < (MAX_NUM_PINS));\
+    assert(PIN_ID_IS_VALID(id));\
     GPIO_PinInit(   get_gpio_base(id),\
                     defaultPinCfgs[(id)].pin,\
                     &(const gpio_pin_config_t) {\
@@ -195,3 +195,16 @@ void board_dbg_uart_putchar(char character)
 {
     LPUART_WriteBlocking(DBG_UART_MODULE, (unsigned char *)&character, 1);
 }
+
+void board_set_lcd_pins_output(void)
+{
+    for(int id = PIN_LCD_DB0; id <= PIN_LCD_DB15; id++)
+        INITIALIZE_GPIO_PIN(id, kGPIO_DigitalOutput, 0U);
+}
+
+void board_set_lcd_pins_input(void)
+{
+    for(int id = PIN_LCD_DB0; id <= PIN_LCD_DB15; id++)
+        INITIALIZE_GPIO_PIN(id, kGPIO_DigitalInput, 1U);
+}
+

@@ -34,9 +34,33 @@ typedef enum {
     PIN_CTP_SDA,
     PIN_CTP_SCL,
     
+    // LCD pins
+    PIN_LCD_DB0,
+    PIN_LCD_DB1,
+    PIN_LCD_DB2,
+    PIN_LCD_DB3,
+    PIN_LCD_DB4,
+    PIN_LCD_DB5,
+    PIN_LCD_DB6,
+    PIN_LCD_DB7,
+    PIN_LCD_DB8,
+    PIN_LCD_DB9,
+    PIN_LCD_DB10,
+    PIN_LCD_DB11,
+    PIN_LCD_DB12,
+    PIN_LCD_DB13,
+    PIN_LCD_DB14,
+    PIN_LCD_DB15,
+    PIN_LCD_RDX,
+    PIN_LCD_WRX,
+    PIN_LCD_DCX,
+    PIN_LCD_CSX,
+    PIN_LCD_RESET,
+
     // NO MORE IDs BELOW HERE
     MAX_NUM_PINS
 } PinID_t;
+#define PIN_ID_IS_VALID(i) ((i) >= 0 && (i) < MAX_NUM_PINS)
 
 
 /*
